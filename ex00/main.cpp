@@ -2,19 +2,31 @@
 
 int main()
 {
-    std::vector <int> arr;
-    arr.push_back(-1);
-    arr.push_back(5);
-    arr.push_back(7);
-    arr.push_back(3);
+    // vector test;
+    std::vector<int> varr;
+    varr.push_back(-1);
+    varr.push_back(5);
+    varr.push_back(7);
+    varr.push_back(9);
+    varr.push_back(15);
+    std::cout << varr.at(0) << std::endl;
     try
     {
-        std::cout << easyfind(arr, -1) << std::endl;
+        std::cout << varr.at(varr.size()) << std::endl;
+    }
+    catch(std::exception& e)
+    {
+        std::cerr << "out of range\n";
+    }
+    try
+    {
+        std::cout << easyfind(varr, -1) << std::endl;
     }
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
+    // deque test;
     std::deque <int> darr;
     darr.push_back(-1);
     darr.push_back(5);
@@ -28,6 +40,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+    // list test;
     std::list <int> larr;
     larr.push_back(-1);
     larr.push_back(5);
