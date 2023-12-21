@@ -4,14 +4,16 @@
 # include <iostream>
 # include <algorithm>
 # include <vector>
+# include <deque>
+# include <list>
 
 template<typename T>
 
-T &easyfind(T &a, int n)
+int easyfind(T &a, int n)
 {
-    T holder = find(a.begin(), a.end(), n);
+    typename T::iterator holder = find(a.begin(), a.end(), n);
     if (holder != a.end())
-        return (holder);
+        return (*holder);
     throw std::runtime_error("Element not found");
 }
 
