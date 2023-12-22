@@ -3,63 +3,62 @@
 int main()
 {
     // vector test;
-    std::vector<int> varr;
-    varr.push_back(-1);
-    varr.push_back(5);
-    varr.push_back(7);
-    varr.push_back(9);
-    varr.push_back(15);
-    std::cout << varr.at(0) << std::endl;
+    std::vector<int> vArr;
+    vArr.push_back(-1);
+    vArr.push_back(5);
+    vArr.push_back(7);
+    vArr.push_back(9);
+    vArr.push_back(15);
     try
     {
-        std::cout << varr.at(varr.size()) << std::endl;
+        std::cout << easyfind(vArr, 2222) << std::endl;
     }
     catch(std::exception& e)
     {
-        std::cerr << "out of range\n";
+        std::cerr << e.what();
     }
     try
     {
-        std::cout << easyfind(varr, -1) << std::endl;
+        std::cout << easyfind(vArr, -1) << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        e.what();
     }
     // deque test;
-    std::deque <int> darr;
-    darr.push_back(-1);
-    darr.push_back(5);
-    darr.push_back(7);
-    darr.push_front(3);
+    std::deque <int> dArr;
+    dArr.push_back(-1);
+    dArr.push_back(5);
+    dArr.push_back(7);
+    dArr.push_front(3);
     try
     {
-        std::cout << easyfind(darr, 3) << std::endl;
+        std::cout << easyfind(dArr, 3) << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what();
     }
     // list test;
-    std::list <int> larr;
-    larr.push_back(-1);
-    larr.push_back(5);
-    larr.push_back(7);
-    larr.push_front(3);
+    std::list <int> lArr;
+    lArr.push_back(-1);
+    lArr.push_back(5);
+    lArr.push_back(7);
+    lArr.push_front(3);
     try
     {
-        std::cout << easyfind(larr, 5) << std::endl;
+        std::cout << easyfind(lArr, 5) << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what();
     }
     try
     {
-        std::cout << easyfind(larr, 0) << std::endl;
+        std::cout << easyfind(lArr, 0) << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what();
     }
 }
