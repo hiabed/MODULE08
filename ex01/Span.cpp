@@ -6,11 +6,12 @@ void Span::addNumber(int number)
         vArr.push_back(number);
     else
         throw std::runtime_error("the vector is full\n");
+    sort(vArr.begin(), vArr.end());
 }
 
 int Span::shortestSpan()
 {
-    return 0;
+    return (vArr.at(1) - vArr.at(0));
 }
 
 int Span::longestSpan()
