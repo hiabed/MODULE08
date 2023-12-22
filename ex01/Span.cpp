@@ -1,8 +1,21 @@
 #include "Span.hpp"
 
-void Span::addNumber()
+void Span::addNumber(int number)
 {
-    _N++;
+    if(vArr.size() <= _N)
+        vArr.push_back(number);
+    else
+        throw std::runtime_error("the vector is full\n");
+}
+
+int Span::shortestSpan()
+{
+    return 0;
+}
+
+int Span::longestSpan()
+{
+    return 0;
 }
 
 Span::Span()
@@ -25,6 +38,7 @@ Span &Span::operator=(const Span &other)
     }
     return *this;
 }
+
 Span::~Span()
 {
 }

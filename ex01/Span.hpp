@@ -1,19 +1,27 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 class Span
 {
 private:
     unsigned int _N;
+    std::vector<int>vArr;
 public:
     // member functions;
-    void addNumber();
+    void addNumber(int number);
+    int shortestSpan();
+    int longestSpan();
     // orthodox canolical form;
     Span();
-    Span(unsigned int N);
     Span(const Span &other);
     Span &operator=(const Span &other);
     ~Span();
+    // constructor parametrized;
+    Span(unsigned int N);
 };
 
 #endif
