@@ -1,31 +1,56 @@
 #include "Span.hpp"
 
+// member functions (methods);
+
 void Span::addNumber(int number)
 {
-    if(vArr.size() <= _N)
-        vArr.push_back(number);
-    else
+    if(vArr.size() >= _N)
         throw std::runtime_error("the vector is full\n");
-    sort(vArr.begin(), vArr.end());
+    vArr.push_back(number);
+}
+
+void Span::addNumber(std::vector<int>::iterator begin , std::vector<int>::iterator end)
+{
+    if(vArr.size() >= _N)
+        throw std::runtime_error("the vector is full\n");
+    vArr.insert(vArr.begin(), vArr.end());
 }
 
 int Span::shortestSpan()
 {
-    return (vArr.at(1) - vArr.at(0));
+    if (vArr.size() < 2)
+        throw (std::runtime_error("no span can be found\n"));
+    int sSpan = INT_MAX;
+    for (int i = 0; (size_t)i < vArr.size(); i++)
+    {
+        for (int j = 0; (size_t)j < vArr.size(); j++)
+        {
+            if (i != j && abs(vArr.at(i) - vArr.at(j)) < sSpan) //check self comparison;
+                sSpan = abs(vArr.at(i) - vArr.at(j));
+        }
+    }
+    return (sSpan);
 }
 
 int Span::longestSpan()
 {
-    return 0;
+    if (vArr.size() < 2)
+        throw (std::runtime_error("no span can be found\n"));
+    return (*max_element(vArr.begin(), vArr.end()) - *min_element(vArr.begin(), vArr.end()));
 }
+
+//constructor parametrized;
+
+Span::Span(unsigned int N)
+{
+    _N = N;
+}
+
+//orthodox canolical form;
 
 Span::Span()
 {
     _N = 0;
-}
-Span::Span(unsigned int N)
-{
-    _N = N;
 }
 Span::Span(const Span &other)
 {
@@ -36,6 +61,7 @@ Span &Span::operator=(const Span &other)
     if (this != &other)
     {
         _N = other._N;
+        vArr = other.vArr;
     }
     return *this;
 }

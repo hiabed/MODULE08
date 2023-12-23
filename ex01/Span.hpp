@@ -13,6 +13,7 @@ private:
 public:
     // member functions;
     void addNumber(int number);
+    void addNumber(std::vector<int>::iterator begin , std::vector<int>::iterator end);
     int shortestSpan();
     int longestSpan();
     // orthodox canolical form;
