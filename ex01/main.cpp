@@ -41,11 +41,11 @@ int main()
     srand(time(0));
     generate(v.begin(), v.end(), rand);
     Span s(v.size());
-    s.addNumber(v.begin(), v.end());
+    s.addRangeNumber(v.begin(), v.end());
     s.print_container();
     try
     {
-        s.addNumber(v.begin(), v.end());
+        s.addRangeNumber(v.begin(), v.end());
     }
     catch(const std::exception& e)
     {
