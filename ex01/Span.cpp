@@ -13,7 +13,15 @@ void Span::addNumber(std::vector<int>::iterator begin , std::vector<int>::iterat
 {
     if(vArr.size() >= _N)
         throw std::runtime_error("the vector is full\n");
-    vArr.insert(vArr.begin(), vArr.end());
+    vArr.insert(vArr.end(), begin, end);
+}
+
+void Span::print_container()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << vArr.at(i) << "\n";
+    }
 }
 
 int Span::shortestSpan()

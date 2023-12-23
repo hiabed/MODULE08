@@ -16,6 +16,7 @@ public:
     void addNumber(std::vector<int>::iterator begin , std::vector<int>::iterator end);
     int shortestSpan();
     int longestSpan();
+    void print_container();
     // orthodox canolical form;
     Span();
     Span(const Span &other);

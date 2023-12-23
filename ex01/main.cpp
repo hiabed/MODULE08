@@ -3,6 +3,7 @@
 int main()
 {
     std::cout << "-----TEST #1------\n";
+
     Span sp = Span(5);
     sp.addNumber(6);
     sp.addNumber(3);
@@ -33,17 +34,22 @@ int main()
     {
         std::cerr << e.what();
     }
+
     std::cout << "-----TEST #2------\n";
 
-    std::vector<int>    v(10000);
-    std::srand(time(0));
-    std::generate(v.begin(), v.end(), std::rand);
+    std::vector<int>    v(1000);
+    srand(time(0));
+    generate(v.begin(), v.end(), rand);
     Span s(v.size());
-    s.addNumber(1);
-    // return 0;
+    s.addNumber(v.begin(), v.end());
+    s.print_container();
+    try
+    {
+        s.addNumber(v.begin(), v.end());
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what();
+    }
+    return 0;
 }
-
-// int main()
-// {
-
-// }
