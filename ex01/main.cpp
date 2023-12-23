@@ -40,12 +40,13 @@ int main()
     std::vector<int>    v(1000);
     srand(time(0));
     generate(v.begin(), v.end(), rand);
-    Span s(v.size());
-    s.addRangeNumber(v.begin(), v.end());
-    s.print_container();
+    
+    Span s2(v.size());
+    s2.addRangeNumber(v.begin(), v.end());
+    s2.print_container();
     try
     {
-        s.addRangeNumber(v.begin(), v.end());
+        s2.addRangeNumber(v.begin(), v.end());
     }
     catch(const std::exception& e)
     {

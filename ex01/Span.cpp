@@ -18,7 +18,7 @@ void Span::addRangeNumber(std::vector<int>::iterator begin , std::vector<int>::i
 
 void Span::print_container()
 {
-    for (int i = 0; i < 10; i++)
+    for (unsigned int i = 0; i < 10; i++)
     {
         std::cout << vArr.at(i) << "\n";
     }
