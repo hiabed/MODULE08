@@ -20,6 +20,7 @@ int main()
     MutantStack<int>::iterator ite = mstack.end();
     ++it;
     --it;
+    *it = 5000;
     while (it != ite)
     {
         std::cout << *it << std::endl;
@@ -50,6 +51,7 @@ int main()
 //     std::list<int>::iterator ite = lst.end();
 //     ++it;
 //     --it;
+//     *it = 5000;
 //     while (it != ite)
 //     {
 //         std::cout << *it << std::endl;
