@@ -37,7 +37,7 @@ int main()
 
     std::cout << "-----TEST #2------\n";
 
-    std::vector<int>    v(1000);
+    std::vector<int>    v(10000);
     srand(time(0));
     generate(v.begin(), v.end(), rand);
     
