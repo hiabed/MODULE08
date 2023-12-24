@@ -16,11 +16,11 @@ public:
 
     iterator begin()
     {
-        return std::stack<T>::c.begin();
+        return this->c.begin();
     }
     iterator end()
     {
-        return std::stack<T>::c.end();
+        return this->c.end();
     }
     // orthodox canolical form;
     MutantStack(){}
