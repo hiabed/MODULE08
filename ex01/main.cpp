@@ -39,7 +39,7 @@ int main()
 
     std::vector<int>    v(10000);
     srand(time(0));
-    generate(v.begin(), v.end(), rand);
+    generate(v.begin(), v.end(), &rand);
     
     Span s2(v.size());
     s2.addRangeNumbers(v.begin(), v.end());
