@@ -13,7 +13,7 @@ private:
 public:
     // member functions;
     void addNumber(int number);
-    void addRangeNumber(std::vector<int>::iterator begin , std::vector<int>::iterator end);
+    void addRangeNumbers(std::vector<int>::iterator begin , std::vector<int>::iterator end);
     int shortestSpan();
     int longestSpan();
     void print_container();

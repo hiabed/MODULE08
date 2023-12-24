@@ -9,7 +9,7 @@ void Span::addNumber(int number)
     vArr.push_back(number);
 }
 
-void Span::addRangeNumber(std::vector<int>::iterator begin , std::vector<int>::iterator end)
+void Span::addRangeNumbers(std::vector<int>::iterator begin , std::vector<int>::iterator end)
 {
     if(vArr.size() >= _N)
         throw std::runtime_error("the vector is full\n");
